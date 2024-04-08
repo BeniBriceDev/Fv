@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static  'global.css'%}">
+    <link rel="stylesheet" href="{% static  'mangalib/css/main.css'%}">
+    <title>Fichier de départ</title>
+</head>
+<body>
+    <h1>hello world</h1>
+    {% if latest_question %}
+      <ul>
+        {% for question in latest_question %}
+         <li>{{question.question_text}}</li>
+         <li><a href="{% url 'index' question.id %}">{{ question.question_text }}</a></li>detail
+        {% endfor %}
+      </ul>
+    {% else %}
+    {% endif %}
+    
+    
+</body>
+</html>
