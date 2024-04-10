@@ -15,7 +15,7 @@
       <ul>
         {% for question in latest_question %}
          <li>{{question.question_text}}</li>
-         <li><a href="{% url 'index' question.id %}">{{ question.question_text }}</a></li>detail
+         <li><a href="{% url 'vote' question.id %}">{{ question.question_text }}</a></li>detail
         {% endfor %}
       </ul>
     {% else %}
